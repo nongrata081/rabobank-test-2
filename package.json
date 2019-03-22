@@ -35,7 +35,7 @@
     "wdio-selenium-standalone-service": "0.0.10",
     "wdio-spec-reporter": "0.1.5",
     "webdriverio": "4.13.2",
-    "workbox-build": "3.4.1"
+    "workbox-build": "3.6.3"
   },
   "config": {
     "commitizen": {
