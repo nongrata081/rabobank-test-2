@@ -1,40 +1,28 @@
-# See http://help.github.com/ignore-files/ for more about ignoring files.
+dist/
+!www/favicon.ico
+www/
 
-# compiled output
-/dist
-/tmp
-/out-tsc
+src/components.d.ts
 
-# dependencies
-/node_modules
-
-# IDEs and editors
-/.idea
-.project
-.classpath
-.c9/
-*.launch
-.settings/
-*.iml
+*~
+*.sw[mnpcod]
+*.log
+*.lock
+*.tmp
+*.tmp.*
+log.txt
+*.sublime-project
 *.sublime-workspace
 
-# IDE - VSCode
-.vscode
+.stencil/
+.idea/
+.vscode/
+.sass-cache/
+.versions/
+node_modules/
+$RECYCLE.BIN/
 
-# misc
-/.sass-cache
-/connect.lock
-/coverage/*
-/libpeerconnection.log
-npm-debug.log
-yarn-error.log
-testem.log
-/typings
-
-# System Files
 .DS_Store
 Thumbs.db
-
-# Debug logs
-*.log
-.scannerwork
+UserInterfaceState.xcuserstate
+.env
