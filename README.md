@@ -1,7 +1,40 @@
-# seed
+# Description
 
-Purpose of this repo is to serve as a seed repository for any kind of project, that has some
-basic functionality:
+For this assignment, we would like to see a form component developed, containing an input component that consists of multiple input fields (e.g. postal code, license plate, money with cents etc). The following functionalities should be implemented:
+- the form should be unaware of the component's multiple separate input fields, the input should be accessible as a single, combined value.
+- the form should only be submittable when the combined value passes a self-chosen pattern / validation.
+- basic input behaviour / state should apply (e.g. disabled, required).
+
+Attached you will find a quickstart of the assignment, to eliminate the need to spend a lot of time on writing boilerplate code. This comes with a basic setup, configuration for stencil, unit tests and bdd.
+
+
+# Goal
+
+The goal of this assignment is to get a general understanding of your approach on component development and an idea of your creativity and meticulousness. There is no expectation for this assignment to take multiple days. We would like to see your current skillset, keep it simple and show what you've got. This assignment should not take more than 4-6 hours of your time.
+
+
+# Requirements
+
+- You use our Starter Pack
+- Usage of StencilJS for component development.
+- Apply proper component logic and behaviour, follow best practises.
+- No usage of other frameworks or libraries.
+- Pay attention to presentation / styling (styled form and fields).
+- Minimal Unit / BDD test coverage (coverage with at least one test where applicable).
+- Handle unexected user input.
+
+
+# Guidelines
+
+Remember this component could be implemented in a corporate environment, used throughout the organisation, so:
+- Write readable, consistent code.
+- Write basic documentation.
+- Commit early, write proper commit messages. Resulting in clean history.
+- Try to give an estimation on worked hours / time logging.
+
+----
+
+# Implementation
 
 # Commit linting
 Checks if your commit messages meet the conventional commit format. Note: Please check [rules](https://github.com/conventional-changelog/commitlint/blob/master/docs/reference-rules.md) / [rules](https://conventional-changelog.github.io/commitlint/#/reference-rules)  before using it.
@@ -68,9 +101,9 @@ Implemented with [conventional-changelog](https://github.com/conventional-change
 ![](https://trello-attachments.s3.amazonaws.com/5c544e9a28eba76fabf3dedb/5c54672549044a1837c0364c/aff687d86a74b45704cb8556ce242452/2019-02-01_16-48-48.png)
 
 ---
-Recommded flow:
+Recommended flow:
 
-1. Run `yarn recommended:bump` to find out what is the reccomended version for bump
+1. Run `yarn recommended:bump` to find out what is the reccommended version for bump
 2. Depending on which version you want to bump, run one of the following (this will also create git tag):
     ```	
     yarn version --major 
@@ -86,13 +119,6 @@ Recommded flow:
 Implemented with [enforce-gitflow-branches](https://github.com/Dacrol/EnforceBranchNames)
 
 ![](https://trello-attachments.s3.amazonaws.com/5c546d7eddb4a82f52f14917/970x1572/915f284c485422b5aab05baa832bbb8b/image.png)
-
-# Enforce yarn
-Programmatically enforce usage of yarn instead of npm for installing node packages.
-Implemented with `.nvmrc` according [to](https://github.com/yarnpkg/yarn/issues/4895).
-![](https://trello-attachments.s3.amazonaws.com/5c55aeddd546a91ee331ecea/1028x390/99d9274660a0ab1de5ab01cb492dbf99/image.png)
-
-![](https://trello-attachments.s3.amazonaws.com/5c544e9a28eba76fabf3dedb/5c55aeddd546a91ee331ecea/d4682258d34fce791634528d27997cec/image.png)
 
 # Enforce node version (.nvmrc)
 Implemented according [to](https://medium.com/@hebet/locking-down-a-project-to-a-specific-node-version-using-nvmrc-and-or-engines-e5fd19144245)
