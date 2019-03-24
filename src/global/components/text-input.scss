@@ -1,6 +1,13 @@
 .text-input-container {
   position: relative;
 
+  &.money-input-container {
+    .text-input {
+      padding-left: 60px;
+      width: calc(100% - 60px);
+    }
+  }
+
   &.valid:after {
     content: '\2713';
     color: green;
