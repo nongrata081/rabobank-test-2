@@ -1,4 +1,4 @@
-import { Component, Event, EventEmitter, Prop } from '@stencil/core';
+import { Component, Event, EventEmitter, Prop, State } from '@stencil/core';
 import { Validator, validatorsFactory } from '../../utils/input-validators';
 
 @Component({
@@ -8,8 +8,8 @@ import { Validator, validatorsFactory } from '../../utils/input-validators';
 
 export class LicensePlateInputComponent {
 
-  @Prop({mutable: true}) value: string;
-  @Prop({mutable: true}) isInputValid: boolean;
+  @State() value: string;
+  @State() isInputValid: boolean;
   @Prop() validator: string = 'license-plate';
 
   @Event() changed: EventEmitter<string>;

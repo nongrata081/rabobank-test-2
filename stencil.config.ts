@@ -12,8 +12,8 @@ export const config: Config = {
   plugins: [
     sass({
       injectGlobalPaths: [
-        'src/global/normalize/reset.scss',
         'src/global/normalize/normalize.scss',
+        'src/global/normalize/reset.scss',
         'src/global/abstract/variables.scss',
         'src/global/abstract/mixins.scss'
       ]

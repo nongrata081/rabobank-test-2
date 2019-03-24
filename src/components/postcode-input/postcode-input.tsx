@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Prop, Event } from '@stencil/core';
+import { Component, EventEmitter, Prop, Event, State } from '@stencil/core';
 import { Validator, validatorsFactory } from '../../utils/input-validators';
 
 @Component({
@@ -8,8 +8,8 @@ import { Validator, validatorsFactory } from '../../utils/input-validators';
 
 export class PostalCodeInputComponent {
 
-  @Prop({mutable: true}) value: string;
-  @Prop({mutable: true}) isInputValid: boolean;
+  @State() value: string;
+  @State() isInputValid: boolean;
   @Prop() validator: string = 'postcode';
 
   @Event() changed: EventEmitter<string>;
@@ -34,7 +34,7 @@ export class PostalCodeInputComponent {
     return (
       <div>
         <div class={'text-input-container' + (this.isInputValid ? ' valid' : '')}>
-          <input type="text" maxlength="6" id="postcode-input" class="text-input" onInput={(ev) => this.handleChange(ev)} />
+          <input id="postcode-input" type="text" maxlength="6" class="text-input" onInput={(ev) => this.handleChange(ev)} />
           <label htmlFor="postcode-input" class={'text-input-label' + (this.value ? ' active' : '')}>Postcode</label>
         </div>
         { this.value && !this.isInputValid ? <span class="validation-error">{this._validator.errorMessage}</span> : null }
