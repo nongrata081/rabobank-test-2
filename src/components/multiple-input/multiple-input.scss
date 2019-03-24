@@ -1,0 +1,10 @@
+.multiple-input-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 5rem;
+
+  & > * {
+    width: 31%;
+  }
+}

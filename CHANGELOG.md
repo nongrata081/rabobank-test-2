@@ -1,3 +1,17 @@
+<a name="0.2.0"></a>
+# [0.2.0](https://github.com/nongrata081/rabobank-test-2/compare/v0.1.0...v0.2.0) (2019-03-24)
+
+
+### Features
+
+* **form:** added form component ([77ec740](https://github.com/nongrata081/rabobank-test-2/commit/77ec740)), closes [#29](https://github.com/nongrata081/rabobank-test-2/issues/29)
+* **license-plate-input:** added license plate input component ([9b2bb41](https://github.com/nongrata081/rabobank-test-2/commit/9b2bb41)), closes [#25](https://github.com/nongrata081/rabobank-test-2/issues/25)
+* **money-input:** added money-input-component ([66736e4](https://github.com/nongrata081/rabobank-test-2/commit/66736e4)), closes [#27](https://github.com/nongrata081/rabobank-test-2/issues/27)
+* **multiple-input:** add multiple input component ([97caeb5](https://github.com/nongrata081/rabobank-test-2/commit/97caeb5)), closes [#30](https://github.com/nongrata081/rabobank-test-2/issues/30)
+* **postcode-input-component:** add postcode input component ([9850433](https://github.com/nongrata081/rabobank-test-2/commit/9850433)), closes [#19](https://github.com/nongrata081/rabobank-test-2/issues/19)
+
+
+
 <a name="0.1.0"></a>
 # [0.1.0](https://github.com/nongrata081/rabobank-test-2/compare/27b659f...v0.1.0) (2019-03-23)
 

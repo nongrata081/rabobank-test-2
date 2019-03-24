@@ -1,0 +1,73 @@
+.text-input-container {
+  position: relative;
+
+  &.money-input-container {
+    .text-input {
+      padding-left: 60px;
+      width: calc(100% - 60px);
+    }
+  }
+
+  &.valid:after {
+    content: '\2713';
+    color: green;
+    position: absolute;
+    top: 7px;
+    right: 0;
+  }
+
+  .text-input {
+    background-color: transparent;
+    border: none;
+    border-radius: 0;
+    outline: none;
+    height: 2rem;
+    width: 100%;
+    font-size: 16px;
+    margin: 0 0 8px 0;
+    padding: 0;
+    transition: $input-transition;
+    @include border-shadow( 1px solid $on-surface-color, none);
+
+    &:focus:not([readonly]),
+    &.valid {
+      @include border-shadow(1px solid $primary-color, 0 1px 0 0 $primary-color);
+
+      & + .text-input-label {
+        color: $primary-color;
+      }
+    }
+
+    &:focus:not([readonly]) {
+      & + .text-input-label {
+        transform: $input-label-transform;
+      }
+    }
+
+    &.valid {
+      display: inline-block;
+    }
+  }
+
+  .text-input-label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: $on-surface-color;
+    font-size: 1rem;
+    cursor: text;
+    transition: $input-label-transition;
+    transform-origin: 0 100%;
+    text-align: initial;
+    transform: translateY(8px);
+
+    &.active {
+      transform: $input-label-transform;
+    }
+  }
+}
+
+.validation-error {
+  color: $warn-color;
+  font-size: .9rem;
+}
