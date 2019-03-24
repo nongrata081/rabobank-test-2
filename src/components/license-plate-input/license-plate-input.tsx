@@ -1,16 +1,16 @@
-import { Component, EventEmitter, Prop, Event } from '@stencil/core';
+import { Component, Event, EventEmitter, Prop } from '@stencil/core';
 import { Validator, validatorsFactory } from '../../utils/input-validators';
 
 @Component({
-  tag: 'rab-postcode-input',
-  styleUrl: 'postcode-input.scss'
+  tag: 'rab-license-plate-input',
+  styleUrl: 'license-plate-input.scss'
 })
 
-export class PostalCodeInputComponent {
+export class LicensePlateInputComponent {
 
   @Prop({mutable: true}) value: string;
   @Prop({mutable: true}) isInputValid: boolean;
-  @Prop() validator: string = 'postcode';
+  @Prop() validator: string = 'license-plate';
 
   @Event() changed: EventEmitter<string>;
 
@@ -34,11 +34,11 @@ export class PostalCodeInputComponent {
     return (
       <div>
         <div class={'text-input-container' + (this.isInputValid ? ' valid' : '')}>
-          <input type="text" maxlength="6" id="postcode-input" class="text-input" onInput={(ev) => this.handleChange(ev)} />
-          <label htmlFor="postcode-input" class={'text-input-label' + (this.value ? ' active' : '')}>Postcode</label>
+          <input id="license-input" type="text" maxlength="6" class="text-input" onInput={(ev) => this.handleChange(ev)}/>
+          <label htmlFor="license-input" class={'text-input-label' + (this.value ? ' active' : '')}>License plate</label>
         </div>
         { this.value && !this.isInputValid ? <span class="validation-error">{this._validator.errorMessage}</span> : null }
       </div>
-    );
+    )
   }
 }

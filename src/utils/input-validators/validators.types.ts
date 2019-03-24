@@ -1,3 +1,4 @@
 export enum ValidatorsTypes {
-  postcode = 'postcode'
+  postCode = 'postcode',
+  licensePlate = 'license-plate'
 }
