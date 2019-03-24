@@ -1,6 +1,6 @@
 {
   "name": "rabobank-assignment",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "stencil form component",
   "scripts": {
     "commit": "git-cz",
