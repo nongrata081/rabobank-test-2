@@ -1,5 +1,6 @@
 import { Component, Event, EventEmitter, Prop, State } from '@stencil/core';
 import { Validator, validatorsFactory } from '../../utils/input-validators';
+import { moneyAmount } from './money-amount-interface';
 
 @Component({
   tag: 'rab-money-input',
@@ -10,11 +11,11 @@ export class MoneyInputComponent {
   private moneyInput: HTMLInputElement;
 
   @State() value: number;
-  @State() isInputValid: boolean;
+  @State() isMoneyAmountValid: boolean;
 
   @Prop() validator: string = 'money-input';
 
-  @Event() changed: EventEmitter<number>;
+  @Event() moneyAmountChanged: EventEmitter<moneyAmount>;
 
   _validator: Validator<number>;
 
@@ -36,14 +37,14 @@ export class MoneyInputComponent {
     }
     this.value = formattedVal;
     this.moneyInput.value = formattedVal;
-    this.changed.emit(this.value);
-    this.isInputValid = this._validator.validate(this.value);
+    this.isMoneyAmountValid = this._validator.validate(this.value);
+    this.moneyAmountChanged.emit({value: this.value, valid: this.isMoneyAmountValid});
   }
 
   render() {
     return (
       <div>
-        <div class={'text-input-container money-input-container' + (this.isInputValid ? ' valid' : '')}>
+        <div class={'text-input-container money-input-container' + (this.isMoneyAmountValid ? ' valid' : '')}>
           <input id="money-input"
                  type="number"
                  min="0"
@@ -60,7 +61,7 @@ export class MoneyInputComponent {
             </select>
           </div>
         </div>
-        { this.value && !this.isInputValid ? <span class="validation-error">{this._validator.errorMessage}</span> : null }
+        { this.value && !this.isMoneyAmountValid ? <span class="validation-error">{this._validator.errorMessage}</span> : null }
       </div>
     );
   }

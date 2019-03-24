@@ -1,5 +1,6 @@
 import { Component, Event, EventEmitter, Prop, State } from '@stencil/core';
 import { Validator, validatorsFactory } from '../../utils/input-validators';
+import { genericInput } from '../../interfaces/interface';
 
 @Component({
   tag: 'rab-license-plate-input',
@@ -9,10 +10,10 @@ import { Validator, validatorsFactory } from '../../utils/input-validators';
 export class LicensePlateInputComponent {
 
   @State() value: string;
-  @State() isInputValid: boolean;
+  @State() isLicensePlateValid: boolean;
   @Prop() validator: string = 'license-plate';
 
-  @Event() changed: EventEmitter<string>;
+  @Event() licensePlateChanged: EventEmitter<genericInput>;
 
   _validator: Validator<string>;
 
@@ -26,18 +27,18 @@ export class LicensePlateInputComponent {
 
   handleChange(ev) {
     this.value = ev.target ? ev.target.value : null;
-    this.changed.emit(this.value);
-    this.isInputValid = this._validator.validate(this.value);
+    this.isLicensePlateValid = this._validator.validate(this.value);
+    this.licensePlateChanged.emit({value: this.value, valid: this.isLicensePlateValid});
   }
 
   render() {
     return (
       <div>
-        <div class={'text-input-container' + (this.isInputValid ? ' valid' : '')}>
+        <div class={'text-input-container' + (this.isLicensePlateValid ? ' valid' : '')}>
           <input id="license-input" type="text" maxlength="6" class="text-input" onInput={(ev) => this.handleChange(ev)}/>
           <label htmlFor="license-input" class={'text-input-label' + (this.value ? ' active' : '')}>License plate</label>
         </div>
-        { this.value && !this.isInputValid ? <span class="validation-error">{this._validator.errorMessage}</span> : null }
+        { this.value && !this.isLicensePlateValid ? <span class="validation-error">{this._validator.errorMessage}</span> : null }
       </div>
     )
   }
