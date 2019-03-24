@@ -14,7 +14,6 @@ export class PostalCodeInputComponent {
   @Prop() validator: string = 'postcode';
 
   @Event() postCodeChanged: EventEmitter<genericInput>;
-  // @Event() postCodeValidityChanged: EventEmitter<boolean>;
 
   _validator: Validator<string>;
 
@@ -30,7 +29,6 @@ export class PostalCodeInputComponent {
     this.value = ev.target ? ev.target.value : null;
     this.isPostCodeValid = this._validator.validate(this.value);
     this.postCodeChanged.emit({value: this.value, valid: this.isPostCodeValid});
-    // this.postCodeValidityChanged.emit(this.isPostCodeValid);
   }
 
   render() {
