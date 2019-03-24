@@ -1,5 +1,6 @@
-import { Component, Listen, State } from '@stencil/core';
+import { Component, Listen, Prop, State } from '@stencil/core';
 import { MultipleInputValue } from '../multiple-input/multiple-input-value.interface';
+import { Validator, validatorsFactory } from '../../utils/input-validators';
 
 @Component({
   tag: 'rab-form',
@@ -10,6 +11,18 @@ export class FormComponent {
   @State() formValue: MultipleInputValue;
   @State() disabled: boolean = false;
 
+  @Prop() validator: string = 'form';
+
+  _validator: Validator<MultipleInputValue>;
+
+  componentWillLoad() {
+    this._validator = validatorsFactory(this.validator);
+  }
+
+  componentWillUpdate() {
+    this._validator = validatorsFactory(this.validator);
+  }
+
   handleSubmit(e) {
     e.preventDefault();
     alert(JSON.stringify(this.formValue));
@@ -18,12 +31,7 @@ export class FormComponent {
   @Listen('multipleInputValueChanged')
   handler(event: CustomEvent) {
     this.formValue = event.detail;
-
-    let testResults = [];
-    Object.keys(this.formValue).forEach(i => {
-      testResults.push(this.formValue[i].valid);
-    });
-    this.disabled = testResults.every((i) => i === true);
+    this.disabled = this._validator.validate(this.formValue);
   }
 
   render() {
