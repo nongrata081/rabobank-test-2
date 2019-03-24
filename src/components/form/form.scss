@@ -1,0 +1,32 @@
+.app-heading {
+  font-size: 2rem;
+  font-family: Arial;
+  font-weight: bold;
+  text-align: center;
+  margin: 5rem 0 8rem 0;
+}
+
+.form-submit {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  background-color: $primary-color;
+  color: white;
+  padding: 1rem 2rem;
+  display: block;
+  margin: 2rem auto 0 auto;
+  cursor: pointer;
+  transition: .3s ease-out;
+  outline: 0;
+  @include box-shadow();
+
+  &:hover {
+    background-color: lighten($primary-color, 5%);
+  }
+
+  &[disabled] {
+    background-color: gray;
+    cursor: auto;
+  }
+}
