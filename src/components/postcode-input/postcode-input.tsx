@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Prop, Event, State } from '@stencil/core';
 import { Validator, validatorsFactory } from '../../utils/input-validators';
+import { genericInput } from '../../interfaces/interface';
 
 @Component({
   tag: 'rab-postcode-input',
@@ -9,10 +10,11 @@ import { Validator, validatorsFactory } from '../../utils/input-validators';
 export class PostalCodeInputComponent {
 
   @State() value: string;
-  @State() isInputValid: boolean;
+  @State() isPostCodeValid: boolean;
   @Prop() validator: string = 'postcode';
 
-  @Event() changed: EventEmitter<string>;
+  @Event() postCodeChanged: EventEmitter<genericInput>;
+  // @Event() postCodeValidityChanged: EventEmitter<boolean>;
 
   _validator: Validator<string>;
 
@@ -26,18 +28,19 @@ export class PostalCodeInputComponent {
 
   handleChange(ev) {
     this.value = ev.target ? ev.target.value : null;
-    this.changed.emit(this.value);
-    this.isInputValid = this._validator.validate(this.value);
+    this.isPostCodeValid = this._validator.validate(this.value);
+    this.postCodeChanged.emit({value: this.value, valid: this.isPostCodeValid});
+    // this.postCodeValidityChanged.emit(this.isPostCodeValid);
   }
 
   render() {
     return (
       <div>
-        <div class={'text-input-container' + (this.isInputValid ? ' valid' : '')}>
+        <div class={'text-input-container' + (this.isPostCodeValid ? ' valid' : '')}>
           <input id="postcode-input" type="text" maxlength="6" class="text-input" onInput={(ev) => this.handleChange(ev)} />
           <label htmlFor="postcode-input" class={'text-input-label' + (this.value ? ' active' : '')}>Postcode</label>
         </div>
-        { this.value && !this.isInputValid ? <span class="validation-error">{this._validator.errorMessage}</span> : null }
+        { this.value && !this.isPostCodeValid ? <span class="validation-error">{this._validator.errorMessage}</span> : null }
       </div>
     );
   }
