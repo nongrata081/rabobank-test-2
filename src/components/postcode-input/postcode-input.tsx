@@ -34,8 +34,8 @@ export class PostalCodeInputComponent {
   render() {
     return (
       <div>
-        <div class={'text-input-container' + (this.isPostCodeValid ? ' valid' : '')}>
-          <input id="postcode-input" type="text" maxlength="6" class="text-input" onInput={(ev) => this.handleChange(ev)} />
+        <div class={'text-input-container postcode-input-container' + (this.isPostCodeValid ? ' valid' : '')}>
+          <input id="postcode-input" type="text" maxlength="6" class="text-input postcode-input" onInput={(ev) => this.handleChange(ev)} />
           <label htmlFor="postcode-input" class={'text-input-label' + (this.value ? ' active' : '')}>Postcode</label>
         </div>
         { this.value && !this.isPostCodeValid ? <span class="validation-error">{this._validator.errorMessage}</span> : null }
