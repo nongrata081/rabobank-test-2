@@ -34,7 +34,7 @@ export class LicensePlateInputComponent {
   render() {
     return (
       <div>
-        <div class={'text-input-container' + (this.isLicensePlateValid ? ' valid' : '')}>
+        <div class={'text-input-container license-plate-input-container' + (this.isLicensePlateValid ? ' valid' : '')}>
           <input id="license-input" type="text" maxlength="6" class="text-input" onInput={(ev) => this.handleChange(ev)}/>
           <label htmlFor="license-input" class={'text-input-label' + (this.value ? ' active' : '')}>License plate</label>
         </div>
