@@ -33,7 +33,7 @@
     "ts-jest": "23.10.4",
     "wdio-cucumber-framework": "2.2.7",
     "wdio-dot-reporter": "0.0.10",
-    "wdio-selenium-standalone-service": "0.0.10",
+    "wdio-selenium-standalone-service": "0.0.12",
     "wdio-spec-reporter": "0.1.5",
     "webdriverio": "4.13.2",
     "workbox-build": "3.4.1"
