@@ -23,7 +23,7 @@
     "@types/jest": "24.0.4",
     "@wdio/cli": "5.4.17",
     "chai": "4.2.0",
-    "commitizen": "3.0.5",
+    "commitizen": "3.1.2",
     "conventional-changelog-cli": "2.0.11",
     "conventional-recommended-bump": "4.0.4",
     "cz-conventional-changelog": "2.1.0",
