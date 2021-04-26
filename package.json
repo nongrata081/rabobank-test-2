@@ -20,7 +20,7 @@
   "devDependencies": {
     "@commitlint/cli": "7.5.2",
     "@commitlint/config-conventional": "7.5.0",
-    "@types/jest": "24.0.4",
+    "@types/jest": "26.0.23",
     "@wdio/cli": "5.4.17",
     "chai": "4.2.0",
     "commitizen": "3.0.5",
