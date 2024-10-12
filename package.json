@@ -21,7 +21,7 @@
     "@commitlint/cli": "7.5.2",
     "@commitlint/config-conventional": "7.5.0",
     "@types/jest": "24.0.4",
-    "@wdio/cli": "5.4.17",
+    "@wdio/cli": "9.2.1",
     "chai": "4.2.0",
     "commitizen": "3.0.5",
     "conventional-changelog-cli": "2.0.11",
@@ -35,7 +35,7 @@
     "wdio-dot-reporter": "0.0.10",
     "wdio-selenium-standalone-service": "0.0.10",
     "wdio-spec-reporter": "0.1.5",
-    "webdriverio": "4.13.2",
+    "webdriverio": "9.2.1",
     "workbox-build": "3.4.1"
   },
   "config": {
